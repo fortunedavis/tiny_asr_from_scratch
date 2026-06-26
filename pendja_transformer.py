@@ -139,11 +139,11 @@ class PositionalEncoding(nn.Module):
         # x : (B, T, d_model)
         x = x + self.pe[:, :x.size(1)]
         return self.dropout(x)
-    
+
 class BestASR(nn.Module):
     def __init__(self,  vocab_size=32, d_model=512, n_head=8, num_layers=6):
         super().__init__()
-       
+       #use log mel here instead
         self.conv_dims = [
                 (1,512,5,5),
                 (512,512,5,5),
